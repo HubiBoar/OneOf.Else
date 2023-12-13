@@ -31,14 +31,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: PackageVersion
-      run: echo ${{ env.PackageVersion }} 
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
+
     - name: Run tests
       run: dotnet test --configuration Release
 
-  deploy:
+  publish-nuget:
     if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     needs: [ test ]
@@ -50,8 +50,5 @@ jobs:
 
       - run: dotnet pack --configuration Release --output ${{ env.NuGetDirectory }} -p:PackageVersion=${{ env.PackageVersion }}
 
-      # Publish all NuGet packages to NuGet.org
-      # Use --skip-duplicate to prevent errors if a package with the same version already exists.
-      # If you retry a failed workflow, already published packages will be skipped without error.
       - name: Publish NuGet package
         run: dotnet nuget push ${{ env.NuGetDirectory }}/*.nupkg --api-key "${{ secrets.NUGET_APIKEY }}" --source https://api.nuget.org/v3/index.json
