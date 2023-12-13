@@ -51,7 +51,7 @@ jobs:
         uses: actions/setup-dotnet@v4
 
       - run: |
-          dotnet pack 
+          dotnet pack
           --configuration Release
           --output ${{ env.NuGetDirectory }}
           -p:PackageVersion=${{ env.PackageVersion }}
