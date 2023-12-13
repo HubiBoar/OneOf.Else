@@ -6,7 +6,7 @@ on:
     inputs:
       tag_name:
         type: string
-        description: Include 🎉🤣 emojis
+        description: Tag
         required: true
   push:
     branches:
@@ -30,9 +30,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - name: PackageVersion
       run: echo ${{ env.PackageVersion }} 
-    - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
     - name: Run tests
