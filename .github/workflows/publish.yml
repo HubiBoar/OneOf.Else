@@ -41,11 +41,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
 
-      - run: |
-          dotnet pack
-          --configuration Release
-          --output ${{ env.NuGetDirectory }}
-          -p:PackageVersion=${{ env.PackageVersion }}
+      - run: dotnet pack --configuration Release --output ${{ env.NuGetDirectory }} -p:PackageVersion=${{ env.PackageVersion }}
 
       # Publish all NuGet packages to NuGet.org
       # Use --skip-duplicate to prevent errors if a package with the same version already exists.
