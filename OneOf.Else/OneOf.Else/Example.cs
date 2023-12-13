@@ -2,7 +2,7 @@
 
 namespace OneOf.Else;
 
-public static class Example
+internal static class Example
 {
     private static void ExampleMethod()
     {
