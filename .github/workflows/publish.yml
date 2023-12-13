@@ -21,6 +21,7 @@ env:
 defaults:
   run:
     shell: pwsh
+    working-directory: ./OneOf.Else
 
 jobs:
   create_nuget:
