@@ -14,10 +14,10 @@ public sealed class OneOfElse<TOut>
     public bool Else(out TOut remainder)
     {
         remainder = _remainder;
-        return _returnValue == false;
+        return _returnValue;
     }
 
-    public static explicit operator bool(OneOfElse<TOut> valid)
+    public static implicit operator bool(OneOfElse<TOut> valid)
     {
         return valid._returnValue;
     }
