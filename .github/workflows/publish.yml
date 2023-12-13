@@ -52,6 +52,8 @@ jobs:
 
       - run: |
           dotnet pack 
+          --configuration Release
+          --output ${{ env.NuGetDirectory }}
           -p:PackageVersion=${{ env.PackageVersion }}
           -p:PackageProjectUrl=${{ env.PackageProjectUrl }}
           -p:RepositoryType=git
@@ -62,7 +64,6 @@ jobs:
           -p:Title=${{ env.Title }}
           -p:Description=${{ env.Description }}
           -p:PackageTags=${{ env.PackageTags }}
-          --configuration Release --output ${{ env.NuGetDirectory }}
 
       # Publish all NuGet packages to NuGet.org
       # Use --skip-duplicate to prevent errors if a package with the same version already exists.
