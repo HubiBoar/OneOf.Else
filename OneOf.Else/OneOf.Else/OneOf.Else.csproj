@@ -6,6 +6,23 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     
+    <PropertyGroup>
+        <Authors>Hubert Dzikuc</Authors>
+        <Title>OneOf Extensions</Title>
+        <Description>OneOf Extensions</Description>
+        <PackageTags>discriminated unions, match switch, oneof, extensions, library</PackageTags>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageProjectUrl>https://github.com/HubiBoar/OneOf.Else</PackageProjectUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/HubiBoar/OneOf.Else</RepositoryUrl>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="../../README.md" Pack="true" PackagePath="" />
+        <None Include="../../LICENSE" Pack="true" PackagePath="" />
+    </ItemGroup>
+    
     <ItemGroup>
         <PackageReference Include="OneOf" Version="3.0.263" />
     </ItemGroup>
