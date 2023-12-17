@@ -1,11 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project>
 
-    <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
-    
     <PropertyGroup>
         <Authors>Hubert Dzikuc</Authors>
         <Title>OneOf Extensions</Title>
@@ -17,14 +11,15 @@
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/HubiBoar/OneOf.Else</RepositoryUrl>
     </PropertyGroup>
-
-    <ItemGroup>
-        <None Include="../../README.md" Pack="true" PackagePath="" />
-        <None Include="../../LICENSE" Pack="true" PackagePath="" />
-    </ItemGroup>
     
     <ItemGroup>
-        <PackageReference Include="OneOf" Version="3.0.263" />
+        <None Include="../../README.md" Pack="true" PackagePath="" Visible="false" />
+        <None Include="../../LICENSE" Pack="true" PackagePath="" Visible="false" />
     </ItemGroup>
-
+    
+    <!-- Version="$(MicrosoftExtensionsVersions)" -->
+    <PropertyGroup>
+        <Dotnet>net8.0</Dotnet>
+        <MicrosoftExtensionsVersions>8.0.0</MicrosoftExtensionsVersions>
+    </PropertyGroup>
 </Project>
