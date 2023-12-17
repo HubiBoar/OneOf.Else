@@ -24,7 +24,7 @@ env:
 
 defaults:
   run:
-    working-directory: ./OneOf.Else
+    working-directory: ./src
 
 jobs:
   test:
