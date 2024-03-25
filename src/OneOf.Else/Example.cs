@@ -1,4 +1,6 @@
-﻿namespace OneOf.Else;
+﻿using OneOf.Types;
+
+namespace OneOf.Else;
 
 internal static class Example
 {
@@ -24,6 +26,6 @@ internal static class Example
 
     private static OneOf<Success, Error> TestMethod()
     {
-        return Success.Instance;
+        return new Success();
     }
 }
