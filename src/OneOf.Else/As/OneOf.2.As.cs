@@ -1,4 +1,6 @@
-﻿namespace OneOf.Else;
+﻿using OneOf;
+
+namespace OneOf.Else;
 
 public static class OneOf_2_AsExtensions
 {
